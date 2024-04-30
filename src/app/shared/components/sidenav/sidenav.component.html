@@ -1,0 +1,151 @@
+<div class="toolbar-container">
+  <mat-toolbar color="primary">
+    <div class="logo-container">
+      <span class="app-name">Your App</span>
+    </div>
+
+    <div class="header-button-container">
+      <button
+        mat-icon-button
+        *ngIf="mainArea"
+        (click)="showLeftSidenav = showRightSidenav = mainArea = false"
+      >
+        <mat-icon>fullscreen</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        *ngIf="!mainArea"
+        (click)="showLeftSidenav = showRightSidenav = mainArea = true"
+      >
+        <mat-icon>fullscreen_exit</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div class="full-page">
+  <as-split
+    [useTransition]="true"
+    unit="percent"
+    [gutterSize]="10"
+    class="as-horizontal"
+  >
+    <as-split-area
+      [size]="30"
+      [order]="1"
+      [visible]="showLeftSidenav"
+      class="split-left"
+    >
+      <button
+        class="round-btn left"
+        (click)="showLeftSidenav = !showLeftSidenav"
+      ></button>
+
+      <div class="left-side-content-container">
+        <mat-accordion>
+          <!-- Garage section-->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="Click to open panel">
+                <span
+                  class="material-symbols-outlined"
+                  matTooltip="Navigate to Garage"
+                  >garage</span
+                >
+                Garage
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div routerLink="/" matTooltip="Click to navigate to Garage">
+              <span>Navigate to Garage</span>
+            </div>
+          </mat-expansion-panel>
+          <!-- Bedroom section-->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="Click to open panel">
+                <span
+                  class="material-symbols-outlined"
+                  matTooltip="Navigate to bedroom"
+                  >bedroom_child</span
+                >
+                Bedroom
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div
+              routerLink="/bedroom"
+              matTooltip="Click to navigate to Bedroom"
+            >
+              <span>Navigate to Bedroom</span>
+            </div>
+          </mat-expansion-panel>
+
+          <!-- Kitchen section-->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title matTooltip="Click to open panel">
+                <span
+                  class="material-symbols-outlined"
+                  matTooltip="Navigate to kitchen"
+                  >kitchen</span
+                >
+                Kitchen
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div
+              routerLink="/kitchen"
+              matTooltip="Click to navigate to Kitchen"
+            >
+              <span>Navigate to Kitchen</span>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </as-split-area>
+
+    <as-split-area
+      [size]="40"
+      [order]="2"
+      [visible]="true"
+      class="main-content"
+    >
+      <button class="round-btn right" (click)="changeLeft()"></button>
+      <button class="round-btn left" (click)="changeRight()"></button>
+
+      <div class="page-container">
+        <router-outlet></router-outlet>
+      </div>
+    </as-split-area>
+    <as-split-area
+      [size]="30"
+      [order]="3"
+      [visible]="showRightSidenav"
+      class="split-right"
+    >
+      <button
+        class="round-btn right"
+        (click)="showRightSidenav = !showRightSidenav"
+      ></button>
+      <mat-accordion class="about-demo">
+        <div class="right-side-content-container">
+          <h1>About this demo</h1>
+          <p>
+            This is a demonstration of a dynamic side navigation with Angular.
+            The application showcases different modules named after parts of a
+            house for educational purposes.
+          </p>
+          <p>
+            The main goal is to provide a clear example of how to implement a
+            side navigation with dynamic width. Each section, such as Garage,
+            Bedroom, and Kitchen, is represented as an expansion panel in the
+            side navigation.
+          </p>
+          <p>
+            The main content area in the middle is resizable and can be toggled
+            to fullscreen. You can navigate between different sections using the
+            buttons provided or by clicking on the respective panel titles.
+          </p>
+        </div>
+      </mat-accordion>
+    </as-split-area>
+  </as-split>
+</div>
