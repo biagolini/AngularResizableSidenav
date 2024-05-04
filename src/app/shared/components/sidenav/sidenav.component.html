@@ -108,8 +108,14 @@
       [visible]="true"
       class="main-content"
     >
-      <button class="round-btn right" (click)="changeLeft()"></button>
-      <button class="round-btn left" (click)="changeRight()"></button>
+      <button
+        class="round-btn right"
+        (click)="showLeftSidenav = !showLeftSidenav"
+      ></button>
+      <button
+        class="round-btn left"
+        (click)="showRightSidenav = !showRightSidenav"
+      ></button>
 
       <div class="page-container">
         <router-outlet></router-outlet>
