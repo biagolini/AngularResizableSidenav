@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SidenavComponent } from './sidenav.component';
+import { ActivatedRoute } from "@angular/router";
+import { beforeEach, describe, expect, it } from "vitest";
+import { SidenavComponent } from "./sidenav.component";
 
-describe('SidenavComponent', () => {
+describe("SidenavComponent", () => {
   let component: SidenavComponent;
   let fixture: ComponentFixture<SidenavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [SidenavComponent]
-})
-    .compileComponents();
-    
+      imports: [SidenavComponent, ActivatedRoute],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SidenavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
