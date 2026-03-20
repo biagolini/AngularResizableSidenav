@@ -1,9 +1,8 @@
-import { provideRouter } from '@angular/router';
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
+import { provideRouter } from "@angular/router";
+import { AppComponent } from "./app.component";
 
-import { AppComponent } from './app.component';
-
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
@@ -11,7 +10,7 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -20,7 +19,6 @@ describe('AppComponent', () => {
   it(`should have as title 'resizeable_sidenav'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('resizeable_sidenav');
+    expect(app.title).toEqual("resizeable_sidenav");
   });
-
 });

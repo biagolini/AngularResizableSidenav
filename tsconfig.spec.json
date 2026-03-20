@@ -5,8 +5,7 @@
     "outDir": "./out-tsc/spec",
     "target": "es2022",
     "types": [
-      "vitest/globals",
-      "node"
+      "vitest/globals"
     ]
   },
   "files": [
