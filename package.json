@@ -37,6 +37,7 @@
     "@angular/compiler-cli": "^21.2.5",
     "@oxc-project/runtime": "^0.121.0",
     "@types/node": "^25.5.0",
+    "@vitest/coverage-v8": "^4.1.0",
     "jsdom": "^29.0.1",
     "typescript": "~5.9.3",
     "vite": "^8.0.1",

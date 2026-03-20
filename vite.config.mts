@@ -10,6 +10,11 @@ export default defineConfig(({ mode }) => ({
     setupFiles: ['src/test-setup.ts'],
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    reporters: ['default'],
+    reporters: ['default', 'html'],
+    coverage: {
+      provider: 'v8',
+      reportsDirectory: './coverage/example-app',
+      reporter: ['html', 'text-summary'],
+    },
   },
 }));
