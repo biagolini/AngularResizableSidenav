@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core'
+import { Component, viewChild } from '@angular/core'
 import { MatSidenav } from '@angular/material/sidenav'
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
@@ -14,9 +14,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     imports: [MatToolbar, MatIcon, AngularSplitModule, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatTooltip, RouterLink, RouterOutlet]
 })
 export class SidenavComponent {
-  @ViewChild('sidenav', { static: false }) sidenav!: MatSidenav
+  readonly sidenav = viewChild.required<MatSidenav>('sidenav');
 
-  @ViewChild('sidenavEnd', { static: false }) sidenavEnd!: MatSidenav
+  readonly sidenavEnd = viewChild.required<MatSidenav>('sidenavEnd');
 
   showLeftSidenav: boolean = true
 
