@@ -5,20 +5,20 @@
     </div>
 
     <div class="header-button-container">
-      <button
-        mat-icon-button
-        *ngIf="mainArea"
-        (click)="showLeftSidenav = showRightSidenav = mainArea = false"
-      >
-        <mat-icon>fullscreen</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        *ngIf="!mainArea"
-        (click)="showLeftSidenav = showRightSidenav = mainArea = true"
-      >
-        <mat-icon>fullscreen_exit</mat-icon>
-      </button>
+      @if (mainArea) {
+        <button
+          mat-icon-button
+          (click)="showLeftSidenav = showRightSidenav = mainArea = false">
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+      }
+      @if (!mainArea) {
+        <button
+          mat-icon-button
+          (click)="showLeftSidenav = showRightSidenav = mainArea = true">
+          <mat-icon>fullscreen_exit</mat-icon>
+        </button>
+      }
     </div>
   </mat-toolbar>
 </div>
@@ -28,18 +28,14 @@
     [useTransition]="true"
     unit="percent"
     [gutterSize]="10"
-    class="as-horizontal"
-  >
+    class="as-horizontal">
     <as-split-area
       [size]="30"
-      [order]="1"
       [visible]="showLeftSidenav"
-      class="split-left"
-    >
+      class="split-left">
       <button
         class="round-btn left"
-        (click)="showLeftSidenav = !showLeftSidenav"
-      ></button>
+        (click)="showLeftSidenav = !showLeftSidenav"></button>
 
       <div class="left-side-content-container">
         <mat-accordion>
@@ -55,7 +51,9 @@
                 Garage
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <div routerLink="/" matTooltip="Click to navigate to Garage">
+            <div
+              routerLink="/"
+              matTooltip="Click to navigate to Garage">
               <span>Navigate to Garage</span>
             </div>
           </mat-expansion-panel>
@@ -73,8 +71,7 @@
             </mat-expansion-panel-header>
             <div
               routerLink="/bedroom"
-              matTooltip="Click to navigate to Bedroom"
-            >
+              matTooltip="Click to navigate to Bedroom">
               <span>Navigate to Bedroom</span>
             </div>
           </mat-expansion-panel>
@@ -93,8 +90,7 @@
             </mat-expansion-panel-header>
             <div
               routerLink="/kitchen"
-              matTooltip="Click to navigate to Kitchen"
-            >
+              matTooltip="Click to navigate to Kitchen">
               <span>Navigate to Kitchen</span>
             </div>
           </mat-expansion-panel>
@@ -104,33 +100,26 @@
 
     <as-split-area
       [size]="40"
-      [order]="2"
       [visible]="true"
-      class="main-content"
-    >
+      class="main-content">
       <button
         class="round-btn right"
-        (click)="showLeftSidenav = !showLeftSidenav"
-      ></button>
+        (click)="showLeftSidenav = !showLeftSidenav"></button>
       <button
         class="round-btn left"
-        (click)="showRightSidenav = !showRightSidenav"
-      ></button>
+        (click)="showRightSidenav = !showRightSidenav"></button>
 
       <div class="page-container">
-        <router-outlet></router-outlet>
+        <router-outlet />
       </div>
     </as-split-area>
     <as-split-area
       [size]="30"
-      [order]="3"
       [visible]="showRightSidenav"
-      class="split-right"
-    >
+      class="split-right">
       <button
         class="round-btn right"
-        (click)="showRightSidenav = !showRightSidenav"
-      ></button>
+        (click)="showRightSidenav = !showRightSidenav"></button>
       <mat-accordion class="about-demo">
         <div class="right-side-content-container">
           <h1>About this demo</h1>

@@ -3,12 +3,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "target": "es2022",
     "types": [
-      "jasmine"
+      "vitest/globals"
     ]
   },
   "files": [
-    "src/test.ts"
+    "src/test-setup.ts"
   ],
   "include": [
     "src/**/*.spec.ts",
