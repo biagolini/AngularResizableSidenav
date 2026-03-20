@@ -1,13 +1,14 @@
-@use '@angular/material' as mat;
-@use '@angular/material-experimental' as matx;
+@use "@angular/material" as mat;
 
-$theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
   )
-));
+);
 
 @include mat.elevation-classes();
 @include mat.app-background();
