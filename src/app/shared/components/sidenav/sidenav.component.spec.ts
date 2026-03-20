@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { provideRouter } from "@angular/router";
 
-import { ActivatedRoute } from "@angular/router";
 import { beforeEach, describe, expect, it } from "vitest";
 import { SidenavComponent } from "./sidenav.component";
 
@@ -10,7 +10,8 @@ describe("SidenavComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SidenavComponent, ActivatedRoute],
+      imports: [SidenavComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SidenavComponent);
