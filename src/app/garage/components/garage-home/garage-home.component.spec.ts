@@ -8,8 +8,8 @@ describe('GarageHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GarageHomeComponent]
-    })
+    imports: [GarageHomeComponent]
+})
     .compileComponents();
     
     fixture = TestBed.createComponent(GarageHomeComponent);
