@@ -1,4 +1,4 @@
-import { importProvidersFrom } from "@angular/core";
+import { importProvidersFrom, provideZonelessChangeDetection } from "@angular/core";
 
 import { VERSION as CDK_VERSION } from "@angular/cdk";
 import { VERSION as MAT_VERSION } from "@angular/material/core";
@@ -12,5 +12,8 @@ console.info("Angular CDK version", CDK_VERSION.full);
 console.info("Angular Material version", MAT_VERSION.full);
 
 bootstrapApplication(AppComponent, {
-  providers: [importProvidersFrom(BrowserModule, AppRoutingModule)],
+  providers: [
+    provideZonelessChangeDetection(),
+    importProvidersFrom(BrowserModule, AppRoutingModule),
+  ],
 }).catch((err) => console.error(err));

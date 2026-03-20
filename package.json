@@ -27,8 +27,7 @@
     "angular-split": "^20.0.0",
     "moment": "^2.30.1",
     "rxjs": "^7.8.2",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.16.1"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "^2.3.1",
