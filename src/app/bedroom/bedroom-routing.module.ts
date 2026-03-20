@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BedroomHomeComponent } from './components/bedroom-home/bedroom-home.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: BedroomHomeComponent,
+    loadComponent: () => import('./components/bedroom-home/bedroom-home.component').then(m => m.BedroomHomeComponent),
   },
 ];
 

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: SidenavComponent,
+    loadComponent: () => import('./shared/components/sidenav/sidenav.component').then(m => m.SidenavComponent),
     children: [
       {
         path: '',

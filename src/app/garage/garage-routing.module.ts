@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GarageHomeComponent } from './components/garage-home/garage-home.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: GarageHomeComponent,
+    loadComponent: () => import('./components/garage-home/garage-home.component').then(m => m.GarageHomeComponent),
   },
 ];
 
